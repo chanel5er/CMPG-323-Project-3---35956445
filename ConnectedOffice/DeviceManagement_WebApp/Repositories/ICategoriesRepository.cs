@@ -8,7 +8,12 @@ namespace DeviceManagement_WebApp.Repositories
     public interface ICategoriesRepository : IGenericRepository<Category>
     {
         Category GetCategory();
-        Task<IActionResult> DeleteConfirmed(Guid id);
-        bool CategoryExists(Category categoryID);
+        Task<IActionResult> Details(Guid? id);
+        Task Create([Bind("CategoryId,CategoryName,CategoryDescription,DateCreated")] Category category);
+        Task<IActionResult> Edit(Guid? id);
+        Task Edit(Guid id, [Bind("CategoryId,CategoryName,CategoryDescription,DateCreated")] Category category);
+        Task Delete<IActionResult>(Guid? id);
+        Task DeleteConfirmed(Guid id);
+        bool CategoryExists(Guid categoryID);
     }
 }

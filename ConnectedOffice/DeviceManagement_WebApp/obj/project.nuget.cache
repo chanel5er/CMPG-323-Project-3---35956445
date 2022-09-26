@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nixkfcG+8oMrEaYchsHP89G509YTb05wSbW9w9e10483Oep0rrnnHTvnm31Vm7ulaVWVTPKKN/AMIxzmc73tlA==",
+  "dgSpecHash": "NFfUX9yzJ2tS6ii3OQE+dKqgTPodeMrrwaDsKx0Yh8jyl/t7dZSPd2/WjYRMClO0jjhL4js09HTSI8oUP68olw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chane\\source\\repos\\chanel5er\\CMPG-323-Project-3-35956445\\ConnectedOffice\\DeviceManagement_WebApp\\DeviceManagement_WebApp.csproj",
+  "projectFilePath": "C:\\Users\\chane\\Source\\Repos\\chanel5er\\CMPG-323-Project-3-35956445\\ConnectedOffice\\DeviceManagement_WebApp\\DeviceManagement_WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chane\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.28\\microsoft.aspnetcore.cryptography.internal.3.1.28.nupkg.sha512",
     "C:\\Users\\chane\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.28\\microsoft.aspnetcore.cryptography.keyderivation.3.1.28.nupkg.sha512",

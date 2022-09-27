@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace DeviceManagement_WebApp.Repositories
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T>
     {
         T GetID(int id);
         IEnumerable<T> GetAll();

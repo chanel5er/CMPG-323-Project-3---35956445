@@ -13,9 +13,9 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class CategoriesController : Controller
     {
-        readonly ICategoriesRepository _categoriesRepository;
+        private readonly ICategoriesRepository<Category> _categoriesRepository;
 
-        public CategoriesController(ICategoriesRepository categoriesRepository)
+        public CategoriesController(ICategoriesRepository<Category> categoriesRepository)
         {
             _categoriesRepository = categoriesRepository;
         }
@@ -23,19 +23,16 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-            return View(_categoriesRepository.GetAll());
+            await _categoriesRepository.GetCategory();
+            return View();
         }
 
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
-            var category = await _categoriesRepository.Details(id);
-            if (category == null)
-            {
-                return NotFound();
-            }
+            await _categoriesRepository.Details<Category>(id);
 
-            return View(category);
+            return View();
         }
 
         // GET: Categories/Create
@@ -58,13 +55,9 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
-            var category = await _categoriesRepository.Edit(id);
+            await _categoriesRepository.Edit<Category>(id) ;
             
-            if (category == null)
-            {
-                return NotFound();
-            }
-            return View(category);
+            return View();
         }
 
         // POST: Categories/Edit/5
@@ -82,9 +75,10 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
-            var category = _categoriesRepository.Delete<IActionResult>(id);
+            var category = _categoriesRepository.Delete<Category>(id);
             
-            if (category == null) {
+            if (category == null) 
+            {
                 return NotFound();
             }
 

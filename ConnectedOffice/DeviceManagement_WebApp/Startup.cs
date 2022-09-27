@@ -1,4 +1,6 @@
 using DeviceManagement_WebApp.Data;
+using DeviceManagement_WebApp.Models;
+using DeviceManagement_WebApp.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +39,9 @@ namespace DeviceManagement_WebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddSingleton<ICategoriesRepository<Category>, CategoriesRepository<Category>>();
+            services.AddSingleton<IDeviceRepository<Device>, DeviceRepository<Device>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

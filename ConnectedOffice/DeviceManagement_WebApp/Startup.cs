@@ -39,9 +39,10 @@ namespace DeviceManagement_WebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddScoped<IGenericRepository, GenericRepository>();
-            services.AddSingleton<ICategoriesRepository<Category>, CategoriesRepository<Category>>();
-            services.AddSingleton<IDeviceRepository<Device>, DeviceRepository<Device>>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(ICategoriesRepository<Category>), typeof(CategoriesRepository<Category>));
+            services.AddScoped(typeof(IDeviceRepository<Device>), typeof(DeviceRepository<Device>));
+            services.AddScoped(typeof(IZoneRepository<Zone>), typeof(ZoneRepository<Zone>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

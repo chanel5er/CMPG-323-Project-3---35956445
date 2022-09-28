@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using DeviceManagement_WebApp.Data;
-using DeviceManagement_WebApp.Models;
+﻿using DeviceManagement_WebApp.Models;
 using DeviceManagement_WebApp.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace DeviceManagement_WebApp.Controllers
 {
@@ -65,13 +60,11 @@ namespace DeviceManagement_WebApp.Controllers
         public async Task<IActionResult> Edit(Guid? id)
         {
             var device = _deviceRepository.Edit<Device>(id);
+            
             if (device == null)
             {
                 return NotFound();
             }
-
-            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryName", device.CategoryI);
-            ViewData["ZoneId"] = new SelectList(_context.Zone, "ZoneId", "ZoneName", device.ZoneId);
 
             return View(device);
         }

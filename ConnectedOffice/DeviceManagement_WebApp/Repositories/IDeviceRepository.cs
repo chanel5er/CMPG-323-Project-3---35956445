@@ -12,12 +12,12 @@ namespace DeviceManagement_WebApp.Repositories
     public interface IDeviceRepository<D> : IGenericRepository<D> where D : class
     {
         Task GetDevice();
-        Task Details<C>(Guid? id);
+        Task Details<D>(Guid? id);
         Task Create();
         Task Create([Bind("DeviceId,DeviceName,CategoryId,ZoneId,Status,IsActive,DateCreated")] Device device);
-        Task Edit<C>(Guid? id);
+        Task Edit<D>(Guid? id);
         Task Edit(Guid id, [Bind("DeviceId,DeviceName,CategoryId,ZoneId,Status,IsActive,DateCreated")] Device device);
-        Task Delete<C>(Guid? id);
+        Task Delete<D>(Guid? id);
         Task DeleteConfirmed(Guid id);
         bool DeviceExists(Guid id);
     }

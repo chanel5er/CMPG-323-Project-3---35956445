@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ConnectedOffice",
+    "\\ConnectedOffice\\DeviceManagement_WebApp",
+    "\\ConnectedOffice\\DeviceManagement_WebApp\\Controllers",
+    "\\ConnectedOffice\\DeviceManagement_WebApp\\Repositories"
   ],
-  "SelectedNode": "\\C:\\Users\\chane\\Source\\Repos\\chanel5er\\CMPG-323-Project-3-35956445",
+  "SelectedNode": "\\ConnectedOffice\\DeviceManagement_WebApp\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }
